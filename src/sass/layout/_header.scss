@@ -1,0 +1,99 @@
+header {
+    background-image: url(../img/bg_sm.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+    height: 100vh;
+    padding: 20px 40px;
+    z-index: 1;
+    position: relative;
+    // display: grid;
+    // grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    @include sm-side {
+      background-image: url(../img/bg_tablet.png);
+      flex-direction: row;
+    }
+    @include tb {
+        grid-template-columns: 65% 35%;
+      background-image: url(../img/bg_tablet.png);
+    }
+    @include pc-small {
+        display: grid;
+      background-image: url(../img/bg_pc.png);
+    }
+}
+.header__ghosts {
+  padding: 20px;
+  padding-top: 40px;
+  display: grid;
+  place-items: center;
+  img {
+    width: 100%;
+    max-width: 630px;
+    height: auto;
+  }
+}  
+.header__img {
+    animation: MoveUpDown 4s linear infinite;
+    position: relative;
+    // left: 0;
+    // bottom: 0;
+}
+
+
+.header__text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    justify-content: flex-end;
+    @include sm-side {
+        justify-content: center;
+    }
+}
+.header__logo {
+    margin: 0;
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+}
+h1 {
+    font-family: "hira-hira";
+    color: white;
+    font-size: 2.3em;
+    letter-spacing: 2px;
+    margin-top: 80px;
+    margin-bottom: 0;
+    text-align: end;
+    @include tb {
+      font-size: 4em;
+    }
+    @include pc-small {
+      font-size: 5em;
+    }
+}
+.btn--play {
+  border: none;
+  background: transparent;
+  padding: 0;
+  align-self: flex-end;
+  margin-right: 8px;
+  margin-top: 30px;
+  position: relative;
+  top: 0;
+  &:hover {
+    top: -5px;
+}
+} 
+
+@keyframes MoveUpDown {
+    0%, 100% {
+      bottom: 0;
+    }
+    50% {
+      bottom: 50px;
+    }
+  }

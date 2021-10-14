@@ -1,0 +1,195 @@
+.story {
+    position: relative;
+    z-index: 1;
+}
+.story__eng {
+    width: 80%;
+    color: white;
+    font-family: 'ZCOOL QingKe HuangYou', monospace;
+    font-size: 2em;
+    letter-spacing: 0.1em;
+    line-height: 1.2em;
+    margin-top: 40px;
+    margin-bottom: 0;
+    text-align: center;
+    @include tb {
+        font-size: 2.4em;
+      }
+}
+  
+.story__jpn {
+    width: 80%;
+    color: #B1B1B1;
+    font-family: 'Kosugi', sans-serif;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    font-weight: 10;
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-align: center;
+    @include tb {
+        font-size: 1.8em;
+      }
+}
+
+h2 {
+    font-family: "hira-hira";
+    color: white;
+    font-size: 1.7em;
+    letter-spacing: 2px;
+    margin-top: 50px;
+    margin-bottom: 0;
+    text-align: center;
+    @include tb {
+      font-size: 2em;
+    }
+}
+
+.story {
+    display: grid;
+    justify-items: center;
+    margin-top: 30px;
+}
+.storyline__img {
+    justify-self: center;
+    margin-top: 40px;
+    width: 70%;
+    max-width: 460px;
+    height: auto;
+}
+.story__line {
+    margin-top: 60px;
+    @include tb {
+        margin-top: 100px;
+      }
+    width: 100%;
+    height: 87px;
+	background: linear-gradient(to right, 
+	                              transparent 0%, 
+	                              transparent calc(50% - 1px), 
+	                              #3051EA calc(50% - 1px), 
+	                              #3051EA calc(50% + 1px), 
+	                              transparent calc(50% + 1px), 
+	                              transparent 100%);
+}
+
+.story__first {
+    background-image: url(../../img/cloud1.png),
+    url(../../img/cloud2.png);
+    background-size: 162px, 183px;
+    background-position: top 5% left -60px, right -40px bottom 20%;
+    background-repeat: no-repeat;
+    @include sm-side {
+        background-size: 265px, 368px;
+        background-position: top 35% left -60px, right -100px bottom 35%;
+    }
+}
+.story__second {
+    background-image: url(../../img/cloud2.png),
+    url(../../img/cloud4.png),
+    url(../../img/cloud1.png);
+    background-size: 178px, 71px, 178px;
+    background-position: bottom 45% left -70px, right 20px top 53%, right -40px bottom 5%,;
+    background-repeat: no-repeat;
+    @include sm-side {
+        background-size: 293px, 168px, 368px;
+    }
+}
+.story__third {
+    padding-bottom: 200px;
+    background-image: url(../../img/cloud4.png),
+    url(../../img/cloud1.png),
+    url(../../img/cloud1.png);
+    background-size: 113px, 178px, 183px;
+    background-position: bottom 20% left -30px, bottom 1% left -40px, right -40px bottom 50px;
+    background-repeat: no-repeat;
+    @include tb {
+        background-size: 173px, 303px, 387px;
+        background-position: bottom 40% left -30px, bottom 1% left -40px, right -40px bottom 50px;
+    }
+}
+
+.story__character {
+    width: 100%;
+    margin-top: 50px;
+    background: #181840;
+}
+// make effect when scroll down
+
+
+input[type=radio] {
+    display: none;
+}  
+.card {
+    position: absolute;
+    width: 128px;
+    // margin: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: transform .4s ease;
+    cursor: pointer;
+  }
+  
+  .carousel__container {
+    height: 300px;
+    margin-top: 90px;
+    width: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+  }
+  
+  img {
+    width: 128px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  #item-1:checked ~ .cards #character-3, #item-2:checked ~ .cards #character-1, #item-3:checked ~ .cards #character-2 {
+    transform: translatex(-90%) scale(.8);
+    opacity: .4;
+    z-index: 0;
+  }
+  
+  #item-1:checked ~ .cards #character-2, #item-2:checked ~ .cards #character-3, #item-3:checked ~ .cards #character-1 {
+    transform: translatex(90%) scale(.8);
+    opacity: .4;
+    z-index: 0;
+  }
+  
+  #item-1:checked ~ .cards #character-1, #item-2:checked ~ .cards #character-2, #item-3:checked ~ .cards #character-3 {
+    transform: translatex(0) scale(1.1);
+    opacity: 1;
+    z-index: 1;
+    
+    img {
+      box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+    }
+  }
+.card__txten {
+  margin: 0;
+  margin-top: 1em;
+  text-align: center;
+  font-size: 1.8em;
+  color: white;
+  font-family: 'ZCOOL QingKe HuangYou', monospace;
+}
+
+.card__txtjp {
+  margin: 0;
+  margin-top: 1em;
+  text-align: center;
+  font-size: 1em;
+  color: #B1B1B1;
+  font-family: 'Kosugi', sans-serif;
+}
